@@ -1,0 +1,1183 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700&family=DM+Sans:wght@300;400;500&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #0a0f0b;
+  color: #f0f0f0;
+  font-family: 'DM Sans', sans-serif;
+}
+
+/* ── Layout ── */
+.app-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* ── Sidebar ── */
+.app-sidebar {
+  width: 240px;
+  background: #0d130e;
+  border-right: 1px solid #1a2e1c;
+  display: flex;
+  flex-direction: column;
+  padding: 24px 16px;
+  position: fixed;
+  height: 100vh;
+  top: 0;
+  left: 0;
+}
+
+.app-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 8px;
+  margin-bottom: 32px;
+}
+
+.app-logo-mark {
+  width: 26px;
+  height: 26px;
+  border-radius: 7px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.app-logo-text {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #4eb157;
+  letter-spacing: 0.6px;
+  white-space: nowrap;
+}
+
+.app-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.app-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: none;
+  background: transparent;
+  color: #6b7280;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: left;
+  width: 100%;
+}
+
+.app-nav-item:hover:not(:disabled) {
+  background: #132014;
+  color: #f0f0f0;
+}
+
+.app-nav-active {
+  color: #4eb157;
+  border-left: 2px solid #4eb157;
+}
+
+.app-nav-disabled {
+  opacity: 0.35;
+  cursor: not-allowed !important;
+}
+
+/* ── Sidebar Footer ── */
+.app-sidebar-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  border-top: 1px solid #1a2e1c;
+  padding-top: 16px;
+}
+
+.app-user-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.app-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #4eb157;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: #0a0f0b;
+  flex-shrink: 0;
+}
+
+.app-username {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: #f0f0f0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 140px;
+}
+
+.app-email {
+  font-size: 0.72rem;
+  color: #6b7280;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 140px;
+}
+
+.app-signout-btn {
+  width: 100%;
+  padding: 8px;
+  background: transparent;
+  border: 1px solid #1a2e1c;
+  border-radius: 8px;
+  color: #6b7280;
+  font-size: 0.82rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.app-signout-btn:hover {
+  border-color: #f87171;
+  color: #f87171;
+}
+
+/* ── Main ── */
+.app-main {
+  margin-left: 240px;
+  flex: 1;
+  padding: 40px;
+  min-height: 100vh;
+}
+
+.app-content {
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* ── Welcome ── */
+.app-welcome h1 {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #f0f0f0;
+}
+
+.app-welcome p {
+  color: #6b7280;
+  margin-top: 4px;
+  font-size: 0.9rem;
+}
+
+.app-page-header h1 {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #f0f0f0;
+}
+
+.app-page-header p {
+  color: #6b7280;
+  margin-top: 4px;
+  font-size: 0.9rem;
+}
+
+/* ── Stats ── */
+.app-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.app-stat-card {
+  background: #0d130e;
+  border: 1px solid #1a2e1c;
+  border-radius: 12px;
+  padding: 20px 24px;
+}
+
+.app-stat-number {
+  font-family: 'Syne', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #4eb157;
+}
+
+.app-stat-label {
+  font-size: 0.82rem;
+  color: #6b7280;
+  margin-top: 4px;
+}
+
+/* ── Section ── */
+.app-section {
+  background: #0d130e;
+  border: 1px solid #1a2e1c;
+  border-radius: 16px;
+  padding: 24px;
+}
+
+.app-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.app-section-header h2 {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #f0f0f0;
+}
+
+.app-view-all {
+  background: none;
+  border: none;
+  color: #4eb157;
+  font-size: 0.85rem;
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.app-loading {
+  color: #6b7280;
+  text-align: center;
+  padding: 32px;
+}
+
+.app-empty {
+  text-align: center;
+  padding: 40px;
+  color: #6b7280;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* ── Job Cards ── */
+.app-jobs-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.job-card {
+  background: #0d130e;
+  border: 1px solid #1a2e1c;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: border-color 0.2s;
+}
+
+.job-card:hover {
+  border-color: #4eb157;
+}
+
+.job-card-body {
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.job-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.job-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #f0f0f0;
+  margin-bottom: 8px;
+}
+
+.job-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.job-tag {
+  padding: 3px 10px;
+  border: 1px solid #1a2e1c;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  color: #4eb157;
+}
+
+.job-date {
+  font-size: 0.75rem;
+  color: #6b7280;
+  white-space: nowrap;
+}
+
+.job-description {
+  font-size: 0.88rem;
+  color: #9ca3af;
+  line-height: 1.65;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ── Card Footer ── */
+.job-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 14px;
+  border-top: 1px solid #1a2e1c;
+}
+
+.job-skills {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.skills-label {
+  font-size: 0.72rem;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.skills-value {
+  font-size: 0.85rem;
+  color: #d1d5db;
+}
+
+/* ── Details Button ── */
+.job-card-actions {
+  display: flex;
+  justify-content: flex-end;
+  flex-shrink: 0;
+}
+
+.ghost-btn {
+  padding: 9px 22px;
+  background: transparent;
+  border: 1px solid #4eb157;
+  border-radius: 8px;
+  color: #4eb157;
+  font-family: 'Syne', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.ghost-btn:hover {
+  background: #4eb157;
+  color: #0a0f0b;
+}
+
+.job-details-page-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+}
+
+.job-details-page-header .ghost-btn {
+  margin-top: 2px;
+}
+
+.job-details-label {
+  color: #4eb157;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.job-details-page {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.job-details-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.job-details-item {
+  background: #0a0f0b;
+  border: 1px solid #1a2e1c;
+  border-radius: 10px;
+  padding: 14px 16px;
+}
+
+.job-details-item span {
+  display: block;
+  color: #6b7280;
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+}
+
+.job-details-item strong {
+  color: #f0f0f0;
+  font-size: 0.92rem;
+}
+
+.job-details-block {
+  border-top: 1px solid #1a2e1c;
+  padding-top: 20px;
+}
+
+.job-details-block h2 {
+  font-family: 'Syne', sans-serif;
+  font-size: 1rem;
+  color: #f0f0f0;
+  margin-bottom: 10px;
+}
+
+.job-details-block p {
+  color: #d1d5db;
+  font-size: 0.92rem;
+  line-height: 1.7;
+}
+
+/* ── CV Upload Page ── */
+.cv-section {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* NOTE:
+   ApplicantDashboard.jsx uses classNames like:
+   - CV-section, CV-note, CV-upload-box, CV-status-card, CV-remove-btn, etc.
+   These start with uppercase "CV". To ensure styles apply reliably,
+   we also support lowercase aliases below.
+*/
+
+/* Uppercase variants used in JSX */
+.CV-section { display: flex; flex-direction: column; gap: 24px; }
+.CV-section-header { display: flex; flex-direction: column; gap: 4px; padding-bottom: 20px; border-bottom: 1px solid #1a2e1c; }
+.CV-note { color: #6b7280; font-size: 0.85rem; }
+.CV-upload-zone { position: relative; width: 100%; }
+.CV-upload-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  padding: 40px 24px;
+  border: 1.5px dashed #2a4a2c;
+  border-radius: 16px;
+  background: #0a120b;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.CV-upload-box:hover { border-color: #4eb157; background: #0d160e; }
+
+.CV-upload-box input { display: none; }
+
+.CV-upload-icon { font-size: 2rem; opacity: 0.7; }
+.CV-upload-text { font-family: 'Syne', sans-serif; font-size: 0.9rem; font-weight: 600; color: #4eb157; }
+.CV-upload-subtext { font-size: 0.78rem; color: #6b7280; }
+
+.CV-status-card {
+  border: 1px solid #1a2e1c;
+  border-radius: 16px;
+  background: #0a120b;
+  overflow: hidden;
+}
+
+.CV-status-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 1px solid #1a2e1c;
+}
+
+.CV-status-title {
+  font-family: 'Syne', sans-serif;
+  color: #4eb157;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.CV-status-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  background: #13201444;
+  border: 1px solid #4eb15744;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  color: #4eb157;
+}
+
+.CV-status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #4eb157;
+  animation: pulse-dot 2s infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.CV-status-card-body { padding: 20px; display: flex; align-items: center; gap: 16px; }
+
+.CV-file-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: #132014;
+  border: 1px solid #1a2e1c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  flex-shrink: 0;
+}
+
+.CV-file-info { flex: 1; min-width: 0; }
+
+.CV-name {
+  font-family: 'Syne', sans-serif;
+  color: #f0f0f0;
+  font-weight: 600;
+  font-size: 0.92rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 4px;
+}
+
+.CV-meta { color: #6b7280; font-size: 0.78rem; }
+
+.CV-status-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px;
+  border-top: 1px solid #1a2e1c;
+  background: #0d130e;
+}
+
+.CV-replace-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  color: #6b7280;
+  font-size: 0.82rem;
+  transition: color 0.2s;
+}
+
+.CV-replace-label:hover { color: #4eb157; }
+
+.CV-replace-label input { display: none; }
+
+.CV-remove-btn {
+  background: transparent;
+  border: 1px solid #2a1515;
+  border-radius: 8px;
+  color: #f87171;
+  padding: 8px 16px;
+  font-size: 0.82rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.CV-remove-btn:hover {
+  background: #f871711a;
+  border-color: #f87171;
+}
+
+.CV-tips {
+  background: #0d130e;
+  border: 1px solid #1a2e1c;
+  border-radius: 12px;
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.CV-tips-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #4eb157;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.CV-tips-list { display: flex; flex-direction: column; gap: 6px; }
+
+.CV-tip-item { display: flex; align-items: flex-start; gap: 8px; font-size: 0.82rem; color: #9ca3af; }
+
+.CV-tip-dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #4eb157;
+  margin-top: 6px;
+  flex-shrink: 0;
+}
+
+.CV-empty {
+  text-align: center;
+  color: #6b7280;
+  font-size: 0.88rem;
+  padding: 8px 0;
+}
+
+.CV-message {
+  font-size: 0.85rem;
+  color: #4eb157;
+  text-align: center;
+  padding: 8px;
+  background: #13201422;
+  border-radius: 8px;
+  border: 1px solid #4eb15722;
+}
+
+/* Lowercase variants (existing styles below) remain for other pages/components */
+
+
+.cv-section-header {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #1a2e1c;
+}
+
+.cv-section h2 {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #f0f0f0;
+}
+
+.cv-note {
+  color: #6b7280;
+  font-size: 0.85rem;
+}
+
+.cv-upload-zone {
+  position: relative;
+  width: 100%;
+}
+
+.cv-upload-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  padding: 40px 24px;
+  border: 1.5px dashed #2a4a2c;
+  border-radius: 16px;
+  background: #0a120b;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.cv-upload-box:hover {
+  border-color: #4eb157;
+  background: #0d160e;
+}
+
+.cv-upload-box input {
+  display: none;
+}
+
+.cv-upload-icon {
+  font-size: 2rem;
+  opacity: 0.7;
+}
+
+.cv-upload-text {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #4eb157;
+}
+
+.cv-upload-subtext {
+  font-size: 0.78rem;
+  color: #6b7280;
+}
+
+.cv-status-card {
+  border: 1px solid #1a2e1c;
+  border-radius: 16px;
+  background: #0a120b;
+  overflow: hidden;
+}
+
+.cv-status-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 1px solid #1a2e1c;
+}
+
+.cv-status-title {
+  font-family: 'Syne', sans-serif;
+  color: #4eb157;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.cv-status-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  background: #13201444;
+  border: 1px solid #4eb15744;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  color: #4eb157;
+}
+
+.cv-status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #4eb157;
+  animation: pulse-dot 2s infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.cv-status-card-body {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.cv-file-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: #132014;
+  border: 1px solid #1a2e1c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  flex-shrink: 0;
+}
+
+.cv-file-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.cv-name {
+  font-family: 'Syne', sans-serif;
+  color: #f0f0f0;
+  font-weight: 600;
+  font-size: 0.92rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 4px;
+}
+
+.cv-meta {
+  color: #6b7280;
+  font-size: 0.78rem;
+}
+
+.cv-status-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px;
+  border-top: 1px solid #1a2e1c;
+  background: #0d130e;
+}
+
+.cv-replace-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  color: #6b7280;
+  font-size: 0.82rem;
+  transition: color 0.2s;
+}
+
+.cv-replace-label:hover {
+  color: #4eb157;
+}
+
+.cv-replace-label input {
+  display: none;
+}
+
+.cv-remove-btn {
+  background: transparent;
+  border: 1px solid #2a1515;
+  border-radius: 8px;
+  color: #f87171;
+  padding: 6px 14px;
+  font-size: 0.78rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.cv-remove-btn:hover {
+  background: #f871711a;
+  border-color: #f87171;
+}
+
+.cv-tips {
+  background: #0d130e;
+  border: 1px solid #1a2e1c;
+  border-radius: 12px;
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cv-tips-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #4eb157;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.cv-tips-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.cv-tip-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 0.82rem;
+  color: #9ca3af;
+}
+
+.cv-tip-dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #4eb157;
+  margin-top: 6px;
+  flex-shrink: 0;
+}
+
+.cv-empty {
+  text-align: center;
+  color: #6b7280;
+  font-size: 0.88rem;
+  padding: 8px 0;
+}
+
+.cv-message {
+  font-size: 0.85rem;
+  color: #4eb157;
+  text-align: center;
+  padding: 8px;
+  background: #13201422;
+  border-radius: 8px;
+  border: 1px solid #4eb15722;
+}
+/* ── Mobile ── */
+@media (max-width: 768px) {
+  .app-sidebar {
+    display: none;
+  }
+
+  .app-main {
+    margin-left: 0;
+    padding: 20px 16px;
+  }
+
+  .app-stats {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .job-card-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .job-card-actions,
+  .ghost-btn {
+    width: 100%;
+  }
+
+  .ghost-btn {
+    text-align: center;
+  }
+
+  .job-details-page-header {
+    flex-direction: column;
+  }
+
+  .job-details-grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* ── Job Details Actions ── */
+.job-details-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding-top: 20px;
+  border-top: 1px solid #1a2e1c;
+  margin-top: 8px;
+}
+
+.apply-btn {
+  padding: 10px 28px;
+  background: #4eb157;
+  border: none;
+  border-radius: 8px;
+  color: #0a0f0b;
+  font-family: 'Syne', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.apply-btn:hover { opacity: 0.85; }
+.apply-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+.applied-btn {
+  background: transparent;
+  border: 1px solid #4eb157;
+  color: #4eb157;
+}
+
+.applied-tag {
+  font-size: 0.82rem;
+  color: #4eb157;
+  border: 1px solid #4eb15744;
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+.leave-btn {
+  padding: 10px 24px;
+  background: transparent;
+  border: 1px solid #1a2e1c;
+  border-radius: 8px;
+  color: #6b7280;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.leave-btn:hover {
+  border-color: #f87171;
+  color: #f87171;
+}
+
+/* ── Apply Modal ── */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: #00000088;
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  padding: 24px;
+}
+
+.modal-box {
+  background: #0d130e;
+  border: 1px solid #1a2e1c;
+  border-radius: 20px;
+  padding: 32px;
+  width: 100%;
+  max-width: 440px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.modal-header h2 {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #f0f0f0;
+}
+
+.modal-job-title {
+  color: #4eb157;
+  font-size: 0.85rem;
+  margin-top: 4px;
+}
+
+.modal-question {
+  color: #9ca3af;
+  font-size: 0.9rem;
+}
+
+.modal-cv-options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.modal-cv-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px;
+  background: #0a0f0b;
+  border: 1px solid #1a2e1c;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+.modal-cv-card:hover {
+  border-color: #4eb157;
+}
+
+.modal-cv-disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.modal-cv-disabled:hover {
+  border-color: #1a2e1c;
+}
+
+.modal-cv-icon {
+  font-size: 1.5rem;
+}
+
+.modal-cv-label {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #f0f0f0;
+}
+
+.modal-cv-name {
+  font-size: 0.78rem;
+  color: #6b7280;
+  margin-top: 2px;
+}
+
+.modal-cv-none {
+  font-size: 0.78rem;
+  color: #f87171;
+  margin-top: 2px;
+}
+
+.modal-cancel-btn {
+  background: transparent;
+  border: 1px solid #1a2e1c;
+  border-radius: 8px;
+  color: #6b7280;
+  padding: 10px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  width: 100%;
+}
+
+.modal-cancel-btn:hover {
+  border-color: #f87171;
+  color: #f87171;
+}
+
+.modal-upload-box {
+  width: 100%;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modal-new-cv-preview {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  color: #4eb157;
+  font-size: 0.88rem;
+}
+
+.modal-success {
+  text-align: center;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.modal-success-icon {
+  font-size: 2.5rem;
+}
+
+.modal-success-text {
+  color: #4eb157;
+  font-family: 'Syne', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+}
